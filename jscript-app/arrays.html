@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h2>Display fruits and vegetables from array list...</h2>
+	<script>
+		var fruits = new Array("apple", "orange", "mango");
+		//display arrays
+		document.write("Display Arrays");
+		for (var i = 0; i < fruits.length; i++) {
+			document.write("<ul>");
+			document.write("<li>"+fruits[i]+"</li>");
+			document.write("</ul>");
+		}
+		var vegetables = ["tomato", "potato", "carrot"];
+		//push data into array
+		vegetables.push("brinjal");
+		document.write("<br />");
+		document.write("Display push() Arrays");
+
+		for (var i = 0; i < vegetables.length; i++) {
+			document.write("<ul>");
+			document.write("<li>"+vegetables[i]+"</li>");
+			document.write("</ul>");	
+		}
+	</script>
+
+	<h2>Uses of arrays map(), forEach(), filter(), slice() etc...</h2>
+	<script>
+		//Uses of array.map(callback[, thisObject]);
+		//Uses of array.map(value, index, array);
+		document.write("<h3>Uses of array.map(callback[, thisObject])</h3>");
+		var numbers = [1, 4, 9, 16, 25, 49, 100];
+		var roots = numbers.map(Math.sqrt);
+		//var roots = numbers.map( n => {n*n});
+		document.write("Use of array.map(): roots is : " + roots);
+		document.write("<h3>Uses of array.forEach(callback[, thisObject])</h3>");
+		
+		//Uses of array.forEach(callback[, thisObject]);
+		var array1 = ['aaaaaaaaa', 'bbbbbbbbbbbb', 'cccccccccc'];
+		document.write("<ul>");
+		array1.forEach(function(element) {
+			document.write("<li>"+element+"</li>");
+		});
+		document.write("</ul>");
+		//Another example of forEach()
+		var numberArrs = [12, 5, 8, 130, 44];
+		document.write("<ul>");
+		numberArrs.forEach(function(n){
+			document.write("<li>"+n*n+"</li>");
+		});
+		document.write("</ul>");
+		//Another example forEach()
+		function printBr(element, index, array) {
+			document.write("<br/>index[" + index + "] is =" + element);
+		}
+		numberArrs.forEach(printBr);
+		
+		//Uses of array.filter(callback(element[,]))
+		document.write("<h3>Uses of array.filter(callback(element[,]) after callback=isBigEnough()</h3>");
+		function isBigEnough(value) {
+			return value >= 10;
+		}
+		var filtered = [12, 5, 8, 130, 44].filter(	);
+		filtered.forEach(function( data){
+			document.write("<span>"+data+"</span>, "); 
+		});
+
+		//Uses of array.slice(begin, end)
+		document.write("<h3>Uses of array.slice(begin, end), after slinsing from 2 to 6</h3>");
+		var counting = [12, 5, 8, 130, 44,100, 200].slice(2,6);
+		counting.forEach(function( data){
+			document.write("<span>"+data+"</span>, ");
+		});
+	</script>
+
+</body>
+
+</html>
